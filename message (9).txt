@@ -236,14 +236,17 @@ function UILibrary.Load(GUITitle)
 
     local MenuScrollingFrame = ScrollingFrame()
     MenuScrollingFrame.Name = "MenuScrollingFrame"
+    MenuScrollingFrame.BackgroundTransparency = 1
     MenuScrollingFrame.Size = UDim2.new(0, 100, 0, 235)
     MenuScrollingFrame.Position = UDim2.new(0, 5, 0, 30)
+    MenuScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, TabCount * HeightOfEachTab)
     MenuScrollingFrame.Parent = MainFrame
     MenuScrollingFrame.ScrollBarThickness = 5
-
+    
     MenuBar.Parent = MenuScrollingFrame
-
-    MenuBar.Size = UDim2.new(1, 0, 0, TabCount * (HeightOfEachTab + PaddingBetweenTabs))
+    
+    MenuBar.Size = UDim2.new(1, 0, 0, TabCount * HeightOfEachTab)
+    
 	
 	TitleButton = TextButton(GUITitle, 14)
 	TitleButton.Name = "TitleButton"
