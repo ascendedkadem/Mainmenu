@@ -200,20 +200,7 @@ function UILibrary.Load(GUITitle)
 	MainFrame.ImageColor3 = Color3.fromRGB(30,30,30)
 	MainFrame.Parent = ContainerFrame
 	
-	local MenuBar, DisplayFrame, TitleBar, MenuScrollingFrame
-
-    MenuScrollingFrame = ScrollingFrame()
-    MenuScrollingFrame.Name = "MenuScrollingFrame"
-    MenuScrollingFrame.BackgroundTransparency = 1
-    MenuScrollingFrame.Size = UDim2.new(0, 100, 0, 235)
-    MenuScrollingFrame.Position = UDim2.new(0, 5, 0, 30)
-    MenuScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, TabCount * HeightOfEachTab)
-    MenuScrollingFrame.Parent = MainFrame
-    MenuScrollingFrame.ScrollBarThickness = 5
-    
-    MenuBar.Parent = MenuScrollingFrame
-    
-    MenuBar.Size = UDim2.new(1, 0, 0, TabCount * HeightOfEachTab)
+	local MenuBar, DisplayFrame, TitleBar
 	
 	MenuBar = ScrollingFrame()
 	MenuBar.Name = "MenuBar"
@@ -246,6 +233,16 @@ function UILibrary.Load(GUITitle)
 	MinimiseButton = TitleIcon(true)
 	MinimiseButton.Name = "Minimise"
 	MinimiseButton.Parent = TitleBar
+
+    local MenuScrollingFrame = ScrollingFrame()
+    MenuScrollingFrame.Name = "MenuScrollingFrame"
+    MenuScrollingFrame.BackgroundTransparency = 1
+    MenuScrollingFrame.Size = UDim2.new(0, 100, 0, 235)
+    MenuScrollingFrame.Position = UDim2.new(0, 5, 0, 30)
+    MenuScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, TabCount * HeightOfEachTab)
+    MenuScrollingFrame.Parent = MainFrame
+    MenuScrollingFrame.ScrollBarThickness = 5
+    
 	
 	TitleButton = TextButton(GUITitle, 14)
 	TitleButton.Name = "TitleButton"
